@@ -7,22 +7,26 @@
     <style>
       input {
         display: flex;
-        flex-direction: row;
+        width: 500px;
+        height: 30px;
+
+        background-color: lightblue;
+        border-radius: 5px;
       }
     </style>
   </head>
   <body>
-    <form id="myForm">
-      <label for="name">name:</label>
-      <input id="name" type="text" />
+    <form onsubmit="return userObjectForm()" id="myForm">
+      <label id="nameLAbel" for="nameUSer">name:</label>
+      <input id="nameUSer" type="text" />
 
-      <label for="lastName">last name:</label>
+      <label id="labelNAme" for="lastName">last name:</label>
       <input id="lastName" type="text" />
 
-      <label for="dateUser">birth date:</label>
+      <label id="dateLAbel" for="dateUser">birth date:</label>
       <input id="dateUser" type="date" />
 
-      <label for="emailUSer">Email:</label>
+      <label id="labelEmail" for="emailUSer">Email:</label>
       <input id="emailUSer" type="email" />
 
       <label for="phone">phone:</label>
@@ -30,7 +34,11 @@
 
       <label for="psotion">psotion:</label>
       <input id="psotion" type="text" />
+
+      <button id="btnSubmit">submit</button>
     </form>
+    <h3>clock:</h3>
+    <div id="clock"></div>
     <script src="main.js"></script>
   </body>
 </html>
