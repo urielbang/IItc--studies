@@ -48,13 +48,19 @@ function userObjectForm() {
   }
 
   //check phone
-  if (phoneUser[0] == 0 && phoneUser.length < 10) {
+  if (phoneUser[0] == 0 && phoneUser.length <= 10) {
     isAllTrue = true;
   } else {
     isAllTrue = false;
   }
 
   if (isAllTrue) {
+    worker.name = nameWorker;
+    worker.lastname = lastNAmeValue;
+    worker.birthDate = dateUserValue;
+    worker.email = email;
+    worker.phone = phoneUser;
+
     return true;
   } else {
     return false;
