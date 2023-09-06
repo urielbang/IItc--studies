@@ -6,12 +6,25 @@
     <title>Document</title>
   </head>
   <body>
-    <form onsubmit="return ifStratCharSame()" id="myForm">
+    <form onsubmit="return ifAllStatmentTrue()" id="myForm">
+      <label for="myInput1">Full Name:</label>
       <input id="myInput1" type="text" />
-      <input id="myInput2" type="text" />
-      <span id="error"></span>
+      <br />
+      <label for="myInput2">Email:</label>
+      <input id="myInput2" name="" type="email" />
+      <br />
+      <label for="myInput3">date:</label>
+      <input id="myInput3" type="date" />
+      <br />
+      <label for="myInput4">password:</label>
+      <input id="myInput4" name="" type="password" />
+      <br />
+      <label for="myInput5">confirm password:</label>
+      <input id="myInput5" name="" type="password" />
+      <br />
       <button id="btnSubmit">submit</button>
     </form>
+    <span id="error"></span>
     <script src="main.js"></script>
   </body>
 </html>
