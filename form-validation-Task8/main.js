@@ -56,6 +56,7 @@ function userObjectForm() {
     isAllTrue = false;
   }
 
+  //check if true or false
   if (isAllTrue) {
     worker.name = nameWorker;
     worker.lastname = lastNAmeValue;
