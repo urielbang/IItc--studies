@@ -1,3 +1,5 @@
+var counter = 0;
+var count = 30;
 function userObjectForm() {
   var worker = {};
   var nameWorker = nameUSer.value;
@@ -13,7 +15,7 @@ function userObjectForm() {
   if (nameWorker[0] == nameWorker[0].toUpperCase()) {
     isAllTrue = true;
   } else {
-    nameLAbel.innerHTML += `have to start with big letter!`;
+    nameLAbel.innerHTML = `have to start with big letter!`;
     nameLAbel.style.color = "red";
     isAllTrue = false;
   }
@@ -23,7 +25,7 @@ function userObjectForm() {
   if (lastNAmeValue.length < 20) {
     isAllTrue = true;
   } else {
-    labelNAme.innerHTML += `this is to many letters!`;
+    labelNAme.innerHTML = `this is to many letters!`;
     labelNAme.style.color = "red";
     isAllTrue = false;
   }
@@ -32,7 +34,7 @@ function userObjectForm() {
   if (currectYear - yearUser > 16 && currectYear - yearUser < 65) {
     isAllTrue = true;
   } else {
-    dateLAbel.innerHTML += `your age is not between 16 - 65`;
+    dateLAbel.innerHTML = `your age is not between 16 - 65`;
     dateLAbel.style.color = "red";
     isAllTrue = false;
   }
@@ -41,7 +43,7 @@ function userObjectForm() {
   if (email.lastIndexOf(".com") != -1 || email.lastIndexOf(".co.il") != -1) {
     isAllTrue = true;
   } else {
-    labelEmail.innerHTML += `your email is not correct!`;
+    labelEmail.innerHTML = `your email is not correct!`;
     labelEmail.style.color = "red";
 
     isAllTrue = false;
@@ -63,6 +65,10 @@ function userObjectForm() {
 
     return true;
   } else {
+    counter++;
+    if (counter == 4) {
+      var interval2 = setInterval(displayTimeAfterFour, 1000);
+    }
     return false;
   }
 }
@@ -74,3 +80,15 @@ function showClock() {
   ).innerHTML = `${dateNow.getHours()}:${dateNow.getMinutes()}:${dateNow.getSeconds()}`;
 }
 setInterval(showClock, 1000);
+document.body.innerHTML += `<h3 id="myH3"></h3>`;
+function displayTimeAfterFour() {
+  if (count > 0) {
+    document.getElementById("myH3").innerHTML = `you are blocked to ${count--}`;
+    btnSubmit.disabled = true;
+  } else {
+    btnSubmit.disabled = false;
+    document.getElementById("myH3").innerHTML = "";
+    location.reload();
+    clearInterval(interval2);
+  }
+}
